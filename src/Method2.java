@@ -7,14 +7,22 @@ public class Method2 extends Hacker{
 
     FileReader fileReader;
     boolean foundPassword = false;
+    private boolean foundLogin= false;
     Date beginDate;
     Date finalDate;
+    public String vLogin;
     
     Auth user = new Auth();
  
 
-
+    Scanner sc = new Scanner(System.in);
     public void searchPassword(){
+
+        if(foundLogin == false){
+            System.out.print("Saisir le login de l'utilisateur > ");
+            vLogin = sc.nextLine();
+            foundLogin=true;
+           }
             // Création d’un fileReader pour lire le fichier
     
         try {
@@ -35,7 +43,7 @@ public class Method2 extends Hacker{
                 while(line != null) {
                     
                     // Comparaison des mots de passe genérés lors de l'authentification
-                    // foundPassword = user.authentificate(line);
+                     foundPassword = user.authentificate(vLogin, line);
 
                     if(foundPassword){
                       break;

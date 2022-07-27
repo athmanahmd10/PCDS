@@ -23,8 +23,7 @@ public class Auth {
             }
 
             int myResponse = conn.getResponseCode();
-            // System.out.println("Password > "+ myResponse);
-            if(myResponse == 308){
+           if(myResponse == 200){
                 System.out.println("Les identifiants de connexion");
                 System.out.println("Login > "+ vLogin);
                 System.out.println("Password > "+ vPassword);

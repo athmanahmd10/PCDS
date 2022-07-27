@@ -13,6 +13,7 @@ public class Method1 extends Hacker{
   
   Auth user = new Auth();
   Scanner sc = new Scanner(System.in);
+  
   public void searchPassword(){
 
      if(foundLogin == false){

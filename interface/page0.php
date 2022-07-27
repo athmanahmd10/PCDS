@@ -20,7 +20,8 @@ $MaConnection = mysqli_connect('localhost', 'abdallahi','password', 'test');
     $rows=$Resultat->fetch_assoc();
     $password = $rows['password'];
     if(strcmp($_POST['foo1'], $password) ==0){
-      header('HTTP/1.1 308');
+      $redirect_page = './page1.php';
+      header('Location:'.$redirect_page);
       exit();
     }else{
       header('HTTP/1.1 309');
